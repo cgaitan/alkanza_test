@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block title %} alkanza test cgaitan {% endblock %}
+{% block container %}
+    {% if errorMessage != None %}
+        <p style="color: red">{{ errorMessage }}</p><br>
+    {% endif %}
+    <h2>Alkanza App Carlos Gaitan</h2>
+    <form method="post" class='request_form'>
+        {% csrf_token %}
+        {% for field in request_form %}
+            <p>
+                {{ field.label_tag}}<br>
+                {{ field }}
+                {% if field.help_text %}
+                    <small style="color: black">{{field.help_text}}</small>
+                {% endif %}
+                {% for error in field.errors %}
+                    <p style="color: red">{{ error }}</p>
+                {% endfor %}
+            </p>
+        {% endfor %}
+        {% if answer_imbalance != None %}
+            <p style="color: green">{{ answer_imbalance }}</p><br>
+        {% endif %}
+        <button type="submit">Calculate Imbalance</button>
+        <br>
+        <h3>all request by now</h2>
+        {% if all_requests != None %}
+            {% for request in all_requests %}
+                <p style="color: black">{{ request }}</p><br>
+            {% endfor %}
+        {% endif %}
+	</form>
+{% endblock %}

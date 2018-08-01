@@ -1,0 +1,18 @@
+google:
+    places_detail_url: https://maps.googleapis.com/maps/api/place/details/json?
+    places_detail_parameters: 
+        - placeid
+    places_search_url: https://maps.googleapis.com/maps/api/place/nearbysearch/json?
+    places_search_parameters: 
+        - location
+        - radius
+        - type
+        - keyword
+    key: AIzaSyDLcGuyQI5dHOOnsGIYAGenf_b45vEXwTs
+db:
+    connection_url: cgaitan.documents.azure.com
+    port: 10255
+    database: alkanza
+    collec: requests
+    user: cgaitan
+    password: 8RmAUmyPbnUDedyCZhLXxEn4raP7RjR8XVT45arHsgR4wmVtP8ud191JdSfT11DWat5XxCeszUEJoo4uTOEaNA==
